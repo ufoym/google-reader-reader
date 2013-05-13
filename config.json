@@ -1,5 +1,9 @@
 {
 	"ad": {
-		"左岸读书_blog": "<hr size=\"1\">"
+		"左岸读书_blog": ["<hr size=\"1\">"],
+		"博客 - 伯乐在线": ["<h4>相关文章</h4>", "<h3>相关文章</h3>", "<h2>相关文章</h2>"],
+		"酷壳 - CoolShell.cn": ["（全文完）", "<div style=\"margin-top:15px;font-size:11px;color:#cc0000"],
+		"isnowfy": ["<strong>我猜您可能还会喜欢:</strong>"],
+		"小众软件": ["<a href=\"http://www.appinn.com/copyright"]
 	}
 }
