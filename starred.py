@@ -4,7 +4,7 @@ reload(sys)
 sys.setdefaultencoding( "utf-8" )
 
 if len(sys.argv) < 3:
-	print 'Usage: python %s [input json filename] [output html filename]' % sys.argv[0]
+	print 'Usage: python %s [input filename] [output filename]' % sys.argv[0]
 	sys.exit()
 
 input_fn = sys.argv[1]
