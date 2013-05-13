@@ -3,16 +3,23 @@ import simplejson as json, sys
 reload(sys)
 sys.setdefaultencoding( "utf-8" )
 
+if len(sys.argv) < 3:
+	print 'Usage: python %s [input json filename] [output html filename]' % sys.argv[0]
+	sys.exit()
+
+input_fn = sys.argv[1]
+output_fn = sys.argv[2]
+
 config = None
 with open('config.json', 'r') as fin:
 	config = json.load(fin)
 
 data = None
-with open('var/starred.json', 'r') as fin:
+with open(input_fn, 'r') as fin:
 	data = json.load(fin)
 
-with open('var/starred.html', 'w') as fout:
-	fout.write('<html><head><meta charset="utf-8"><title>Google Reader Reader</title><style type=\"text/css\">article {margin: 200px auto; width: 70%;}</style></head><body>\n')
+with open(output_fn, 'w') as fout:
+	fout.write('%s\n' % config['header'])
 	for item in data['items']:
 		try:
 			title = item['title']
@@ -26,4 +33,4 @@ with open('var/starred.html', 'w') as fout:
 			pass
 		fout.write('<article><header><h1>%s</h1></header>' % title)
 		fout.write('%s</article>\n' % content)
-	fout.write('</body><html>')
+	fout.write(config['footer'])
